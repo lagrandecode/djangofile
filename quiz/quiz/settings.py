@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-xksml)dxqh!r8)^r7=c*18aw0&(1e!y5#&j(kiwspb0z(33eid
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/"]
+ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/",'127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -83,6 +83,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 WSGI_APPLICATION = "quiz.wsgi.application"
 
+WSGI_APPLICATION = 'api.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

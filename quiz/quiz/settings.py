@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "api",
     'corsheaders',
+    # 'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 WSGI_APPLICATION = "quiz.wsgi.application"
 
-WSGI_APPLICATION = 'api.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -142,3 +142,10 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#     ]
+# }

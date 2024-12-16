@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-xksml)dxqh!r8)^r7=c*18aw0&(1e!y5#&j(kiwspb0z(33eid"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/",'127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/",'127.0.0.1', '.vercel.app','quizapp.herokuapp.com']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -131,13 +132,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Media settings
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # File system location
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -149,3 +151,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #         'rest_framework.authentication.SessionAuthentication',
 #     ]
 # }
+
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}

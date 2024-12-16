@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-xksml)dxqh!r8)^r7=c*18aw0&(1e!y5#&j(kiwspb0z(33eid
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/",'127.0.0.1', '.vercel.app','quizapp.herokuapp.com','https://quizapi-re2dlo5ou-oluwaseuns-projects-8a631f4a.vercel.app']
+ALLOWED_HOSTS = ["http://localhost:3000","http://localhost:3005""http://localhost:3001","*","http://localhost:3002","http://localhost:3003","http://localhost:3004","http://10.0.0.63:8000/",'127.0.0.1', '.vercel.app','quizapp.herokuapp.com','https://quizapi-re2dlo5ou-oluwaseuns-projects-8a631f4a.vercel.app','https://quizappapi-0cf91e1b68f1.herokuapp.com','quizappapi-0cf91e1b68f1.herokuapp.com']
 
 
 # Application definition

@@ -8,6 +8,7 @@ from .serializers import QuestionSerializer,ResultSerializer, ResponseSerializer
 
 
 # Create your views here.
+////
 
 
 class QuestionList(APIView):
